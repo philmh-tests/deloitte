@@ -8,7 +8,7 @@ namespace Deloitte.RestApi.Services.Resources.Get
 
         public string Cca3 { get; set; }
 
-        public string Ccn3 { get; set; }
+        public int Ccn3 { get; set; }
 
         public Dictionary<string, CountryCurrency> Currencies { get; set; }
     }

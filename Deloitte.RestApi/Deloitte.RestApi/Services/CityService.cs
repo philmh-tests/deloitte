@@ -50,8 +50,8 @@ namespace Deloitte.RestApi.Services
                 TouristRating = matchingCityEntity.TouristRating
             };
 
-            //await ExpandCountryCodeAsync(matchingCityDto);
-            //await ExpandWeatherForecastAsync(matchingCityDto);
+            await ExpandCountryAndCurrencyCodesAsync(matchingCityDto);
+            await ExpandWeatherForecastAsync(matchingCityDto);
 
             return matchingCityDto;
         }
@@ -76,7 +76,7 @@ namespace Deloitte.RestApi.Services
             // Expand on the DTO response using external APIs.
             foreach (var matchingCityDto in matchingCityDtos)
             {
-                await ExpandCountryCodeAsync(matchingCityDto);
+                await ExpandCountryAndCurrencyCodesAsync(matchingCityDto);
                 await ExpandWeatherForecastAsync(matchingCityDto);
             }
 
@@ -115,7 +115,7 @@ namespace Deloitte.RestApi.Services
                 TouristRating = createdCityEntity.TouristRating
             };
 
-            //await ExpandCountryCodeAsync(createdCityDto);
+            //await ExpandCountryAndCurrencyCodesAsync(createdCityDto);
             //await ExpandWeatherForecastAsync(createdCityDto);
 
             return createdCityDto;
@@ -138,7 +138,7 @@ namespace Deloitte.RestApi.Services
                 TouristRating = matchingCityEntity.TouristRating
             };
 
-            //await ExpandCountryCodeAsync(removedCityEntity);
+            //await ExpandCountryAndCurrencyCodesAsync(removedCityEntity);
             //await ExpandWeatherForecastAsync(removedCityEntity);
 
             return removedCityEntity;
@@ -178,13 +178,13 @@ namespace Deloitte.RestApi.Services
                 TouristRating = modifiedCityEntity.TouristRating
             };
 
-            //await ExpandCountryCodeAsync(modifiedCityDto);
+            //await ExpandCountryAndCurrencyCodesAsync(modifiedCityDto);
             //await ExpandWeatherForecastAsync(modifiedCityDto);
 
             return modifiedCityDto;
         }
 
-        private async Task ExpandCountryCodeAsync(Dto.Get.CityExtended matchingCityDto)
+        private async Task ExpandCountryAndCurrencyCodesAsync(Dto.Get.CityExtended matchingCityDto)
         {
             var matchingCountryDtos = await _countriesService.GetCountriesAsync(matchingCityDto.Country);
             if (matchingCountryDtos != null && matchingCountryDtos.Count > 0)

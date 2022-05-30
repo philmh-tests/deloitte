@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "24e27ba3-7c29-41c0-9d29-e7310b19c342",
+		"name": "Deloitte REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "900443"
+	},
+	"item": [
+		{
+			"name": "Create a City",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"London\",\r\n    \"state\": \"England\",\r\n    \"country\": \"United Kingdom\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deloitteRestApiRoot}}/api/cities",
+					"host": [
+						"{{deloitteRestApiRoot}}"
+					],
+					"path": [
+						"api",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cities by Name Term",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Swindon\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deloitteRestApiRoot}}/api/cities/search",
+					"host": [
+						"{{deloitteRestApiRoot}}"
+					],
+					"path": [
+						"api",
+						"cities",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a City",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"state\": \"\",\r\n    \"country\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deloitteRestApiRoot}}/api/cities/:id",
+					"host": [
+						"{{deloitteRestApiRoot}}"
+					],
+					"path": [
+						"api",
+						"cities",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify a City",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"/country\",\r\n        \"value\": \"United Kingdom\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{deloitteRestApiRoot}}/api/cities/:id",
+					"host": [
+						"{{deloitteRestApiRoot}}"
+					],
+					"path": [
+						"api",
+						"cities",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a City",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{deloitteRestApiRoot}}/api/cities/:id",
+					"host": [
+						"{{deloitteRestApiRoot}}"
+					],
+					"path": [
+						"api",
+						"cities",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ALL Countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restcountries.com/v3.1/all",
+					"protocol": "https",
+					"host": [
+						"restcountries",
+						"com"
+					],
+					"path": [
+						"v3.1",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Countries by Name Term",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restcountries.com/v3.1/name/:nameTerm",
+					"protocol": "https",
+					"host": [
+						"restcountries",
+						"com"
+					],
+					"path": [
+						"v3.1",
+						"name",
+						":nameTerm"
+					],
+					"variable": [
+						{
+							"key": "nameTerm",
+							"value": "United Kingdom"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Weather Forecast by Latitude & Longitude",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?appid=93a72fbaff67826d6c12278e40762de0&lat=50&lon=-50&units=metric",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "appid",
+							"value": "93a72fbaff67826d6c12278e40762de0"
+						},
+						{
+							"key": "lat",
+							"value": "50"
+						},
+						{
+							"key": "lon",
+							"value": "-50"
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Geocoding by City Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/geo/1.0/direct?appid=93a72fbaff67826d6c12278e40762de0&q=Swindon,GB",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"geo",
+						"1.0",
+						"direct"
+					],
+					"query": [
+						{
+							"key": "appid",
+							"value": "93a72fbaff67826d6c12278e40762de0"
+						},
+						{
+							"key": "q",
+							"value": "Swindon,GB"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -6,6 +6,6 @@
 
         public string Cca3 { get; set; }
 
-        public string Ccn3 { get; set; }
+        public int Ccn3 { get; set; }
     }
 }

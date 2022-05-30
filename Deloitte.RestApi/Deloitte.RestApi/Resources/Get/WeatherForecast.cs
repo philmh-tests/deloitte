@@ -1,4 +1,5 @@
 ﻿using Deloitte.RestApi.Objects.Enums;
+using Newtonsoft.Json.Converters;
 
 namespace Deloitte.RestApi.Resources.Get
 {
@@ -12,6 +13,7 @@ namespace Deloitte.RestApi.Resources.Get
 
         public decimal TemperatureMin { get; set; }
 
+        [Newtonsoft.Json.JsonConverter(typeof(StringEnumConverter))]
         public TemperatureUnits TemperatureUnit { get; set; } = TemperatureUnits.Default;
     }
 }

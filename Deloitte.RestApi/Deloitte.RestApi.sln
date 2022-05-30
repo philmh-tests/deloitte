@@ -7,7 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deloitte.RestApi", "Deloitt
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Deloitte.Database2016", "Deloitte.Database\Deloitte.Database2016.sqlproj", "{75DE9432-1EFA-435A-A9F8-08039600E250}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.RestApi.Tests", "Deloitte.RestApi.Tests\Deloitte.RestApi.Tests.csproj", "{9F433A5A-716F-4207-9548-EECF13BB3148}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deloitte.RestApi.Tests", "Deloitte.RestApi.Tests\Deloitte.RestApi.Tests.csproj", "{9F433A5A-716F-4207-9548-EECF13BB3148}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{7E84C11A-48AB-4209-8C89-A0E187236410}"
+	ProjectSection(SolutionItems) = preProject
+		..\Deloitte REST API.postman_collection.json = ..\Deloitte REST API.postman_collection.json
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
